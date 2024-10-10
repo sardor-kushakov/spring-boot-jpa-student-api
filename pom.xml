@@ -10,7 +10,7 @@
     </parent>
     <groupId>sarik.dev</groupId>
     <artifactId>spring-boot-with-jpa</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>spring-boot-with-jpa</name>
     <description>spring-boot-with-jpa</description>
     <url/>

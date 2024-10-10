@@ -20,11 +20,11 @@ public class StudentController {
     }
 
     /**
-     * Add a new student.
-     * This method accepts a student object through an HTTP POST request and saves it to the database.
+     * Yangi talabani qo'shish.
+     * Ushbu metod HTTP POST so'rovi orqali talabani ob'ekti qabul qiladi va uni ma'lumotlar bazasiga saqlaydi.
      *
-     * @param student The student details (first name, last name, phone number).
-     * @return A message indicating that the student was successfully added.
+     * @param student Talaba haqida ma'lumotlar (ism, familiya, telefon raqami).
+     * @return Talaba muvaffaqiyatli qo'shilgani haqida xabar.
      */
     @PostMapping
     public ResponseEntity<String> addStudent(@RequestBody Student student) {
@@ -33,10 +33,10 @@ public class StudentController {
     }
 
     /**
-     * Retrieve all students.
-     * This method returns a list of all students in response to an HTTP GET request.
+     * Barcha talabalarni olish.
+     * Ushbu metod HTTP GET so'rovi orqali barcha talabalar ro'yxatini qaytaradi.
      *
-     * @return A list of all students.
+     * @return Barcha talabalar ro'yxati.
      */
     @GetMapping
     public ResponseEntity<List<Student>> getStudents() {
@@ -45,11 +45,11 @@ public class StudentController {
     }
 
     /**
-     * Retrieve a student by their ID.
-     * This method fetches the student with the given ID from the database in response to an HTTP GET request.
+     * Talabani ID bo'yicha olish.
+     * Ushbu metod berilgan ID orqali talabani ma'lumotlar bazasidan olish uchun ishlatiladi.
      *
-     * @param id The unique identifier of the student.
-     * @return The student details or an error message if the student is not found.
+     * @param id Talabaning noyob identifikatori.
+     * @return Talaba ma'lumotlari yoki agar talaba topilmasa xato xabari.
      */
     @GetMapping("/{id}")
     public ResponseEntity<Student> getStudentById(@PathVariable Integer id) {
@@ -59,11 +59,11 @@ public class StudentController {
     }
 
     /**
-     * Delete a student by their ID.
-     * This method deletes the student with the given ID from the database in response to an HTTP DELETE request.
+     * Talabani ID bo'yicha o'chirish.
+     * Ushbu metod berilgan ID orqali talabani ma'lumotlar bazasidan o'chiradi.
      *
-     * @param id The unique identifier of the student.
-     * @return A message indicating that the student was successfully deleted.
+     * @param id Talabaning noyob identifikatori.
+     * @return Talaba muvaffaqiyatli o'chirilgani haqida xabar.
      */
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteStudentById(@PathVariable Integer id) {
@@ -72,12 +72,12 @@ public class StudentController {
     }
 
     /**
-     * Update a student by their ID.
-     * This method updates the details of the student with the given ID in response to an HTTP PUT request.
+     * Talabani ID bo'yicha yangilash.
+     * Ushbu metod berilgan ID orqali talabani ma'lumotlari yangilanadi.
      *
-     * @param id The unique identifier of the student.
-     * @param student The updated student details.
-     * @return A message indicating that the student was successfully updated, or an error if the student is not found.
+     * @param id Talabaning noyob identifikatori.
+     * @param student Yangilangan talaba ma'lumotlari.
+     * @return Talaba muvaffaqiyatli yangilanganligi haqida xabar, yoki agar talaba topilmasa xato.
      */
     @PutMapping("/{id}")
     public ResponseEntity<String> updateStudent(@PathVariable Integer id, @RequestBody Student student) {
@@ -93,11 +93,11 @@ public class StudentController {
     }
 
     /**
-     * Helper method to find a student by ID or throw an exception if not found.
-     * This method is used internally to retrieve a student by ID, or throw an error if the student is not found.
+     * Talabani ID bo'yicha topish yoki xato tashlash.
+     * Ushbu metod ichki ravishda talaba ID bo'yicha topiladi yoki xato tashlaydi agar topilmasa.
      *
-     * @param id The unique identifier of the student.
-     * @return The student details or an exception.
+     * @param id Talabaning noyob identifikatori.
+     * @return Talaba ma'lumotlari yoki xato.
      */
     private Student findStudentByIdOrThrow(Integer id) {
         return studentRepository.findById(id)

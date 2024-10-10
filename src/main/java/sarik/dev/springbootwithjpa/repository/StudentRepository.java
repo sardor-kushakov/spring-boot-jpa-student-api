@@ -5,9 +5,12 @@ import org.springframework.stereotype.Repository;
 import sarik.dev.springbootwithjpa.model.Student;
 
 /**
- * Repository interface for Student entity.
- * Provides CRUD operations for Student using JPA.
+ * Student entitysi uchun repository interfeysi.
+ * JPA yordamida Talabalar uchun CRUD (yaratish, o'qish, yangilash, o'chirish) operatsiyalarini taqdim etadi.
  */
+
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Integer> {
+    /* Talabalar bilan bog'liq bazaviy operatsiyalarni amalga oshirish uchun!
+     Spring Data JPA tomonidan avtomatik ravishda taqdim etilgan metodlar mavjud.*/
 }
